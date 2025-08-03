@@ -1,25 +1,23 @@
---- service
-local tween = game:GetService( "TweenService" )
+if not game:IsLoaded() then game.Loaded:Wait() end
+shared.WinSer3 = {}
+local __ = shared.WinSer3
+__.starter = false
+__.mainframe = nil
+__.delay = .1285
 
---- variable
-local Window = {}
-
---- type
-export type typeProperties = {
-    Position : UDim2?,
-    Size : UDim2?,
-    BackgroundColor3 : Color3?,
-    BackgroundTransparency : number?,
-    AnchorPoint : Vector2?,
-}
-export type typeGoal = {
-    Set : typeProperties,
-}
-
-local winser3 = {}
-
-winser3.Window = function ( _Frame : Frame, _Goal : typeGoal )
-    print( "ASS" )
+do 
+    __.space = {
+        --- need a modules sumthing
+    }
+    for _, v_ in next, ( script.Parent:FindFirstChild( "Packages" ) ):GetChildren() do
+        __.space[ v_.Name ] = v_
+    end
+    __.import = function ( ... )
+        local env = getfenv( 0 )
+        for _, _z in next, { ... } do
+            env[ _z ] = require( __.space[ _z ] )
+        end
+    end
 end
 
-return winser3
+return ""
