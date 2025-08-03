@@ -15,6 +15,7 @@ _componButton.ScaleTween = function ( instance : Instance, percen : number, Info
     return nil
 end
 _componButton.InitJelly = function ( instance : Instance, percen : number, Infos : any? )
+
     Infos = Infos or TweenInfo.new( .03 )
     if typeof(Infos) == "TweenInfo" then
         local Temp_Infos = {}

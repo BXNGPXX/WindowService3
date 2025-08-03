@@ -56,20 +56,22 @@ winser3.Window = function ( _Frame : Frame?, _Goal : any?, Info : TweenInfo?, Wi
     end
 
     --- add in table
-    if WindowName and typeof( WindowName ) == "string" and Windows[ WindowName ] then
-        warn( `have a {WindowName} in WindowTable` )
-        return
-    else
-        Windows[ WindowName ] = _Window
-    end
+    
 
     if WindowName and typeof( WindowName ) == "string" and WindowName:find( "Alert-" ) then
         if Alerts[ WindowName ] then 
             warn( `have a {WindowName} in AlertTable` )
             return
+        else
+            Alerts[ WindowName ] = _Window
         end
     else
-        Alerts[ WindowName ] = _Window
+        if WindowName and typeof( WindowName ) == "string" and Windows[ WindowName ] then
+            warn( `have a {WindowName} in WindowTable` )
+            return
+        else
+            Windows[ WindowName ] = _Window
+        end
     end
 
     --- function
@@ -110,7 +112,14 @@ winser3.Window = function ( _Frame : Frame?, _Goal : any?, Info : TweenInfo?, Wi
             return
         end
 
-        winser3.CloseAllWindow( _Window.Name )
+        if _Window.Name and typeof( _Window.Name ) == "string" and _Window.Name:find( "Alert-" ) then
+            winser3.CloseAllAlert( _Window.Name )
+            print( "Alert" )
+        else
+            winser3.CloseAllWindow( _Window.Name )
+            print( "Window" )
+        end
+        
 
         _Window.Active = true
         _Window.Frame.Visible = true
