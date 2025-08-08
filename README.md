@@ -42,17 +42,7 @@ local AlertWindow = _InitWin3.Window( WindowFrame, {
 - `Window._EndClose ( callback_function )` - add function on close animation ended
 
  **CloseAllWindow** `_InitWin3.CloseAllWindow ( ignoreWindow : string )`
- ```luau
-_InitWin3.CloseAllWindow ( "IgnoreWindow" )
-task.wait( 2 )
-_InitWin3.CloseAllWindow ( )
- ```
  **CloseAllAlert** `_InitWin3.CloseAllAlert ( ignoreAlertWindow : string )`
-  ```luau
-_InitWin3.CloseAllAlert ( "IgnoreAlertWindow" )
-task.wait( 2 )
-_InitWin3.CloseAllAlert ( )
- ```
  **GetWindow** `_InitWin3.GetWindow ( windowName : string? )`
  **GetAlert** `_InitWin3.GetAlert ( alertWindowName : string? )`
 
