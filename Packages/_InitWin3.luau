@@ -118,10 +118,10 @@ winser3.Window = function ( _Frame : Frame?, _Goal : any?, Info : TweenInfo?, Wi
 
         if _Window.Name and typeof( _Window.Name ) == "string" and _Window.Name:find( "Alert-" ) then
             winser3.CloseAllAlert( _Window.Name )
-            print( "Alert" )
+            -- print( "Alert" )
         else
             winser3.CloseAllWindow( _Window.Name )
-            print( "Window" )
+            -- print( "Window" )
         end
         
 
