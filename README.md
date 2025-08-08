@@ -10,7 +10,7 @@ import list
 
 # _InitWin3
 
-Window
+> Window
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -24,7 +24,7 @@ local Window = _InitWin3.Window( WindowFrame, {
 )
 ```
 
-Alert Window
+> Alert Window
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -37,7 +37,7 @@ local AlertWindow = _InitWin3.Window( WindowFrame, {
     TweenInfo.new( .2 ), "WindowName-Alert"  --- request "-Alert"
 )
 ```
-_InitWin3.Window Function
+> _InitWin3.Window Function
 - `Window.Open ()` - open window
 - `Window.Close ()` - close window
 - `Window._StartOpen ( callback_function )` - add function on start open animation
