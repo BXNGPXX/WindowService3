@@ -26,6 +26,12 @@ winser3.CloseAllAlert = function ( ignoreWindow : string )
     end)
 end
 
+winser3.GetWindow = function ( windowName : string )
+    return Windows[ windowName ] or nil
+end
+winser3.GetWindow = function ( windowName : string )
+    return Windows[ windowName ] or nil
+end
 
 winser3.Window = function ( _Frame : Frame?, _Goal : any?, Info : TweenInfo?, WindowName : string? | "Alert-name"? )
 
