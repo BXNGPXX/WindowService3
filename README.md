@@ -1,4 +1,4 @@
-## Get Start Module
+# Get Start Module
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -8,8 +8,9 @@ import list
 - `_InitWin3` - WindowService
 - `_componButton` - ButtonEvents
 
-## _InitWin3
-# Window
+# _InitWin3
+
+Window
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -22,7 +23,8 @@ local Window = _InitWin3.Window( WindowFrame, {
     TweenInfo.new( .2 ), "WindowName" 
 )
 ```
-# Alert Window
+
+Alert Window
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
