@@ -1,4 +1,4 @@
-Get Start Module
+## Get Start Module
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -8,7 +8,7 @@ import list
 - `_InitWin3` - WindowService
 - `_componButton` - ButtonEvents
 
-New Window
+## New Window
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
