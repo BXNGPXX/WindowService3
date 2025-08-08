@@ -42,8 +42,11 @@ local AlertWindow = _InitWin3.Window( WindowFrame, {
 - `Window._EndClose ( callback_function )` - add function on close animation ended
 
  **CloseAllWindow** `_InitWin3.CloseAllWindow ( ignoreWindow : string )`
+
  **CloseAllAlert** `_InitWin3.CloseAllAlert ( ignoreAlertWindow : string )`
+
  **GetWindow** `_InitWin3.GetWindow ( windowName : string? )`
+ 
  **GetAlert** `_InitWin3.GetAlert ( alertWindowName : string? )`
 
  # _componButton
