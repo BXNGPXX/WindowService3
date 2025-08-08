@@ -63,11 +63,24 @@ local alertWindow = _InitWin3.GetWindow ( alertWindowName )
  ```
 
  # _componButton
- **ScaleTween** `_componButton.ScaleTween ( instance : Instance, percen : number, Info : TweenInfo )`
  ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
 __.import( "_componButton" )
-
+ ```
+ **ScaleTween** `_componButton.ScaleTween ( instance : Instance, percen : number, Info : TweenInfo )`
+ ```luau
 _componButton.ScaleTween ( Frame, 50, TweenInfo.new( .2 ) )
+ ```
+  **InitJelly** `_componButton.InitJelly ( instance : Instance, percen : number, Infos : any? )`
+ ```luau
+-- none info
+_componButton.InitJelly ( Frame, 50 ) -- defualt info is TweenInfo.new( .03 )
+-- single info
+_componButton.InitJelly ( Frame, 50, TweenInfo.new( .2 ) ) -- using TweenInfo.new( .2 )
+-- double info ( start, end )
+_componButton.InitJelly ( Frame, 50, {
+    [ 1 ] = TweenInfo.new( .2 ), -- start, in
+    [ 2 ] = TweenInfo.new( .1 ) -- end, out
+}) 
  ```
