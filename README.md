@@ -21,6 +21,7 @@ local Window = _InitWin3.Window( WindowFrame, {
     }, 
     TweenInfo.new( .2 ), "WindowName" 
 )
+```
 # Alert Window
 ```luau
 require ( "WinService3" )
@@ -33,7 +34,6 @@ local AlertWindow = _InitWin3.Window( WindowFrame, {
     }, 
     TweenInfo.new( .2 ), "WindowName-Alert"  --- request "-Alert"
 )
-```
 ```
 _InitWin3.Window Function
 - `Window.Open ()` - open window
