@@ -29,8 +29,8 @@ end
 winser3.GetWindow = function ( windowName : string )
     return Windows[ windowName ] or nil
 end
-winser3.GetWindow = function ( windowName : string )
-    return Windows[ windowName ] or nil
+winser3.GetAlert = function ( alertWindowName : string )
+    return Alerts[ alertWindowName ] or nil
 end
 
 winser3.Window = function ( _Frame : Frame?, _Goal : any?, Info : TweenInfo?, WindowName : string? | "Alert-name"? )

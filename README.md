@@ -67,7 +67,7 @@ task.wait( 2 )
 _InitWin3.CloseAllAlert ( )
  ```
 
- **GetWindow** `_InitWin3.GetWindow ( windowName : string )`
+ **GetWindow** `_InitWin3.GetWindow ( windowName : string? )`
   ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -76,11 +76,21 @@ __.import( "_InitWin3" )
 local window = _InitWin3.GetWindow ( windowName )
  ```
 
- **GetAlert** `_InitWin3.GetAlert ( alertWindowName : string )`
+ **GetAlert** `_InitWin3.GetAlert ( alertWindowName : string? )`
   ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
 __.import( "_InitWin3" )
 
 local alertWindow = _InitWin3.GetWindow ( alertWindowName )
+ ```
+
+ # _componButton
+ **ScaleTween** `_componButton.ScaleTween ( instance : Instance, percen : number, Info : TweenInfo )`
+ ```luau
+require ( "WinService3" )
+local __ = shared.WinSer3
+__.import( "_componButton" )
+
+_componButton.ScaleTween ( Frame, 50, TweenInfo.new( .2 ) )
  ```
