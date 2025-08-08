@@ -5,8 +5,8 @@ local __ = shared.WinSer3
 __.import( "_InitWin3", "_componButton" )
 ```
 import list
-- `_InitWin3` WindowService
-- `_componButton` ButtonEvents
+- `_InitWin3` - WindowService
+- `_componButton` - ButtonEvents
 
 New Window
 ```luau
@@ -22,5 +22,9 @@ local Window = _InitWin3.Window( WindowFrame, {
 )
 ```
 _InitWin3.Window Function
-- `Window.Open ()`
-- `Window.Close ()`
+- `Window.Open ()` - open window
+- `Window.Close ()` - close window
+- `Window._StartOpen ( callback_function )` - add function on start open animation
+- `Window._EndOpen ( callback_function )` - add function on open animation ended
+- `Window._StartClose ( callback_function )` - add function on start close animation
+- `Window._EndClose ( callback_function )` - add function on close animation ended

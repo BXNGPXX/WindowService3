@@ -56,8 +56,6 @@ winser3.Window = function ( _Frame : Frame?, _Goal : any?, Info : TweenInfo?, Wi
     end
 
     --- add in table
-    
-
     if WindowName and typeof( WindowName ) == "string" and WindowName:find( "Alert-" ) then
         if Alerts[ WindowName ] then 
             warn( `have a {WindowName} in AlertTable` )
