@@ -84,3 +84,85 @@ _componButton.InitJelly ( Frame, 50, {
     [ 2 ] = TweenInfo.new( .1 ) -- end, out
 }) 
  ```
+
+  # _navbar
+ ```luau
+require ( "WinService3" )
+local __ = shared.WinSer3
+__.import( "_navbar" )
+ ```
+  **Init** `_navbar.Init ( Template : any?, Configs : any?, Callback : any? )`
+ > Fix Pages
+```luau
+--- navbar
+local nav_config = {
+    { title = "Home", active = true, ... },
+    { title = "Backpack", ... },
+    { title = "Setting", ... },
+}
+local nav_template = {
+    NavbarButton = MainFrame2.nav.TextButton,
+    NavPages = {
+        [ "Home" ] = MainFrame2.Homepage,
+        [ "Backpack" ] = MainFrame2.Backpackpage,
+        [ "Setting" ] = MainFrame2.Settingpage,
+    }
+}
+local nav_callback = {
+
+    --- button
+    ButtonActive = function ( NavbarButton, i, config )
+        NavbarButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        NavbarButton.BackgroundColor3 = Color3.fromRGB(255, 169, 11)
+    end,
+    ButtonInActive = function ( NavbarButton, i, config )
+        NavbarButton.TextColor3 = Color3.fromRGB(162, 162, 162)
+        NavbarButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    end,
+    SetupButton = function ( NavbarButton, i, config )
+        NavbarButton.Text = config.title
+    end,
+    --- page
+    SetupPage = function ( NavPage, i, config )
+        NavPage.Name = config.title
+    end,
+    ChangePage = function ( CurrentPage, CurrentButton, CurrentConfig )
+        print( `To Page`, CurrentPage )
+    end
+}
+```
+ > Auto Pages ( Using Template )
+ ```luau
+--- navbar
+local nav_config = {
+    { title = "Home", active = true, ... },
+    { title = "Backpack", ... },
+    { title = "Setting", ... },
+}
+local nav_template = {
+    NavbarButton = MainFrame2.nav.TextButton,
+    NavPage = MainFrame2.page
+}
+local nav_callback = {
+
+    --- button
+    ButtonActive = function ( NavbarButton, i, config )
+        NavbarButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        NavbarButton.BackgroundColor3 = Color3.fromRGB(255, 169, 11)
+    end,
+    ButtonInActive = function ( NavbarButton, i, config )
+        NavbarButton.TextColor3 = Color3.fromRGB(162, 162, 162)
+        NavbarButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    end,
+    SetupButton = function ( NavbarButton, i, config )
+        NavbarButton.Text = config.title
+    end,
+    --- page
+    SetupPage = function ( NavPage, i, config )
+        NavPage.Name = config.title
+    end,
+    ChangePage = function ( CurrentPage, CurrentButton, CurrentConfig )
+        print( `To Page`, CurrentPage )
+    end
+}
+```

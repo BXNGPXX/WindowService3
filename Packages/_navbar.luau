@@ -9,9 +9,12 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
         Active = {},
         Hide = {}
     }
-
-    Nav.PagePath = Template.NavPage.Parent
-    Nav.PageTemplate = Template.NavPage
+    if Template.NavPage then
+        Nav.PagePath = Template.NavPage.Parent
+        Nav.PageTemplate = Template.NavPage
+    elseif Template.NavPages then
+        Nav.PageTemplates = Template.NavPages
+    end
     Nav.Page = {}
     
     Nav.CurrentPage = ""
@@ -42,7 +45,9 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
 
     --- setup
     Nav.ButtonTemplate.Parent = nil
-    Nav.PageTemplate.Parent = nil
+    if Nav.PageTemplate then
+        Nav.PageTemplate.Parent = nil
+    end
 
     if Configs and next( Configs ) then
     
@@ -63,11 +68,24 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
             end)
 
             --- page
-            local Page = Nav.PageTemplate:Clone() :: Instance
-            if Callback.SetupPage then
-                Callback.SetupPage( Page, i, config )
+            local Page
+            if Nav.PageTemplate then
+                Page = Nav.PageTemplate:Clone() :: Instance
+                if Callback.SetupPage then
+                    Callback.SetupPage( Page, i, config )
+                end
+                Page.Parent = Nav.PagePath
+            elseif Nav.PageTemplates then
+                if Nav.PageTemplates[ config.title ] then
+                    Page = Nav.PageTemplates[ config.title ]
+                    if Callback.SetupPage then
+                        Callback.SetupPage( Page, i, config )
+                    end
+                else
+                    warn( `No page template found for {config.title}` )
+                    continue
+                end
             end
-            Page.Parent = Nav.PagePath
 
             -- active
             if config.active == true then
@@ -94,7 +112,6 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
         end
 
     end
-
 
     return Nav
 end
