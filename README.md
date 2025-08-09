@@ -8,6 +8,7 @@ __.import( "_InitWin3", "_componButton" )
 import list
 - `_InitWin3` - WindowService
 - `_componButton` - ButtonEvents
+- `_navbar` - ButtonEvents
 
 ## _InitWin3
 ```luau
