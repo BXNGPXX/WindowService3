@@ -183,4 +183,10 @@ winser3.Window = function ( _Frame : Frame?, _Goal : any?, Info : TweenInfo?, Wi
     return _Window
 end
 
+local plr = game:GetService( "Players" ).LocalPlayer
+plr.CharacterAdded:Connect( function() 
+    Windows = {}
+    Alerts = {}
+end)
+
 return winser3
