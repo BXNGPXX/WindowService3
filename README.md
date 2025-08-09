@@ -124,3 +124,47 @@ local nav_template = {
 }
 _navbar.Init ( nav_template, nav_config )
 ```
+ > nav_config
+```luau
+local nav_config = {
+    { title = "Title", active = true, ... },
+    { title = "Title 2", ... },
+}
+```
+ > nav_template
+ ```luau
+local nav_template = {
+    NavbarButton = Button : TextButton | ImageButton,
+    NavPage = Page : Frame | ScrollingFrame | CanvasGroup
+    --- or
+    NavPages = {
+      [ "Title" ] = Page : Frame | ScrollingFrame | CanvasGroup,
+      [ "Title2" ] = Page2 : Frame | ScrollingFrame | CanvasGroup,
+    }
+}
+```
+ > nav_callback
+```luau
+local nav_callback = {
+  --- ButtonActive
+  ButtonActive = function ( NavbarButton, i, config )
+    NavbarButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+  end,
+  --- ButtonInActive
+  ButtonInActive = function ( NavbarButton, i, config )
+    NavbarButton.TextColor3 = Color3.fromRGB(100, 100, 100)
+  end,
+  --- SetupButton
+  SetupButton = function ( NavbarButton, i, config )
+    NavbarButton.Text = config.title
+  end,
+  --- SetupPage
+  SetupPage = function ( NavPage, i, config )
+        NavPage.Name = config.title
+  end,
+  --- ChangePage
+  ChangePage = function ( CurrentPage, CurrentButton, CurrentConfig )
+        print( `To Page`, CurrentPage )
+  end
+}
+```
