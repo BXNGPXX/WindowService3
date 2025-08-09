@@ -1,4 +1,5 @@
-# Get Start Module
+# WindowService3 v.0.0.1
+## Get Start Module
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -8,7 +9,7 @@ import list
 - `_InitWin3` - WindowService
 - `_componButton` - ButtonEvents
 
-# _InitWin3
+## _InitWin3
 ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -62,7 +63,7 @@ local window = _InitWin3.GetWindow ( windowName )
 local alertWindow = _InitWin3.GetWindow ( alertWindowName )
  ```
 
- # _componButton
+ ## _componButton
  ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
@@ -85,7 +86,7 @@ _componButton.InitJelly ( Frame, 50, {
 }) 
  ```
 
-  # _navbar
+## _navbar
  ```luau
 require ( "WinService3" )
 local __ = shared.WinSer3
