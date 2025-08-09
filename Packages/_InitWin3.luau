@@ -7,6 +7,7 @@ local Windows = {}
 local Alerts = {}
 local winser3 = {}
 
+repeat task.wait() until require( './_next_update' )
 winser3.CloseAllWindow = function ( ignoreWindow : string )
     task.defer( function() 
         for _, v in next, Windows do

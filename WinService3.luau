@@ -3,6 +3,7 @@ shared.WinSer3 = {}
 local __ = shared.WinSer3
 __.starter = false
 __.mainframe = nil
+__.version = ".0.0.1"
 __.delay = .1285
 
 do 
