@@ -28,15 +28,15 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
                 Nav.CurrentPage = pageTitle
 
                 v.Page.Visible = true
-                if Callback.ChangePage then
+                if Callback and Callback.ChangePage then
                     Callback.ChangePage( v.Page, v.Button, v.Config )
                 end
-                if Callback.ButtonActive then
+                if Callback and Callback.ButtonActive then
                     Callback.ButtonActive( v.Button, v.i, v.Config )
                 end
             else
                 v.Page.Visible = false
-                if Callback.ButtonInActive then
+                if Callback and Callback.ButtonInActive then
                     Callback.ButtonInActive( v.Button, v.i, v.Config )
                 end
             end
@@ -55,7 +55,7 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
             
             --- button
             local Button = Nav.ButtonTemplate:Clone() :: TextButton
-            if Callback.SetupButton then
+            if Callback and Callback.SetupButton then
                 Callback.SetupButton( Button, i, config )
             else
                 if Button:IsA( "TextButton" ) then
@@ -71,14 +71,14 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
             local Page
             if Nav.PageTemplate then
                 Page = Nav.PageTemplate:Clone() :: Instance
-                if Callback.SetupPage then
+                if Callback and Callback.SetupPage then
                     Callback.SetupPage( Page, i, config )
                 end
                 Page.Parent = Nav.PagePath
             elseif Nav.PageTemplates then
                 if Nav.PageTemplates[ config.title ] then
                     Page = Nav.PageTemplates[ config.title ]
-                    if Callback.SetupPage then
+                    if Callback and Callback.SetupPage then
                         Callback.SetupPage( Page, i, config )
                     end
                 else
@@ -91,13 +91,13 @@ navbar.Init = function ( Template : any?, Configs : any?, Callback : any? )
             if config.active == true then
                 Nav.CurrentPage = config.title
                 Page.Visible = true
-                if Callback.ButtonActive then
+                if Callback and Callback.ButtonActive then
                     Callback.ButtonActive( Button, i, config )
                 end
 
             else
                  Page.Visible = false
-                 if Callback.ButtonInActive then
+                 if Callback and Callback.ButtonInActive then
                     Callback.ButtonInActive( Button, i, config )
                 end
             end

@@ -108,28 +108,7 @@ local nav_template = {
         [ "Setting" ] = MainFrame2.Settingpage,
     }
 }
-local nav_callback = {
-
-    --- button
-    ButtonActive = function ( NavbarButton, i, config )
-        NavbarButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-        NavbarButton.BackgroundColor3 = Color3.fromRGB(255, 169, 11)
-    end,
-    ButtonInActive = function ( NavbarButton, i, config )
-        NavbarButton.TextColor3 = Color3.fromRGB(162, 162, 162)
-        NavbarButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    end,
-    SetupButton = function ( NavbarButton, i, config )
-        NavbarButton.Text = config.title
-    end,
-    --- page
-    SetupPage = function ( NavPage, i, config )
-        NavPage.Name = config.title
-    end,
-    ChangePage = function ( CurrentPage, CurrentButton, CurrentConfig )
-        print( `To Page`, CurrentPage )
-    end
-}
+_navbar.Init ( nav_template, nav_config )
 ```
  > Auto Pages ( Using Template )
  ```luau
@@ -143,26 +122,5 @@ local nav_template = {
     NavbarButton = MainFrame2.nav.TextButton,
     NavPage = MainFrame2.page
 }
-local nav_callback = {
-
-    --- button
-    ButtonActive = function ( NavbarButton, i, config )
-        NavbarButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-        NavbarButton.BackgroundColor3 = Color3.fromRGB(255, 169, 11)
-    end,
-    ButtonInActive = function ( NavbarButton, i, config )
-        NavbarButton.TextColor3 = Color3.fromRGB(162, 162, 162)
-        NavbarButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    end,
-    SetupButton = function ( NavbarButton, i, config )
-        NavbarButton.Text = config.title
-    end,
-    --- page
-    SetupPage = function ( NavPage, i, config )
-        NavPage.Name = config.title
-    end,
-    ChangePage = function ( CurrentPage, CurrentButton, CurrentConfig )
-        print( `To Page`, CurrentPage )
-    end
-}
+_navbar.Init ( nav_template, nav_config )
 ```
